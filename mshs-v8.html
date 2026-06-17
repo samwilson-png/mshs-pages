@@ -1,0 +1,2869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Mount Sinai Health System — New York's leading academic medical center. World-class care across 7 hospitals, 400+ locations.">
+<title>Mount Sinai Health System — World-Class Care in New York</title>
+<style>
+/* ============================================================
+   MSHS Design System v8 — Sam Wilson, Creative Director
+   Brand: Cyan #009DD6 | Magenta #D80B8C | Violet #221F72
+   Font: Helvetica Neue | AA WCAG Compliant
+   ============================================================ */
+
+:root {
+  --cyan:        #009DD6;
+  --cyan-dark:   #007BAA;
+  --cyan-light:  #C6E8FC;
+  --magenta:     #D80B8C;
+  --magenta-dark:#A8066D;
+  --violet:      #221F72;
+  --violet-mid:  #2E2A8A;
+  --white:       #FFFFFF;
+  --off-white:   #F5F8FA;
+  --gray-100:    #EEF2F5;
+  --gray-200:    #D6DDE3;
+  --gray-500:    #6B7B8D;
+  --gray-700:    #3A4A57;
+  --gray-900:    #1A2430;
+  --text-body:   #2C3E50;
+  --radius-sm:   4px;
+  --radius-md:   8px;
+  --radius-lg:   12px;
+  --radius-xl:   20px;
+  --shadow-sm:   0 2px 8px rgba(0,0,0,0.08);
+  --shadow-md:   0 4px 20px rgba(0,0,0,0.12);
+  --shadow-lg:   0 8px 40px rgba(0,0,0,0.16);
+  --nav-h:       72px;
+  --transition:  0.25s ease;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-body);
+  background: var(--white);
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+a { color: inherit; text-decoration: none; }
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  background: var(--violet);
+  color: var(--white);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  z-index: 9999;
+  transition: top var(--transition);
+}
+.skip-link:focus { top: 1rem; }
+
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+
+.nav-top {
+  background: var(--gray-100);
+  padding: 0.35rem 0;
+  font-size: 0.75rem;
+  color: var(--gray-700);
+  border-bottom: 1px solid var(--gray-200);
+}
+.nav-top-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1.5rem;
+}
+.nav-top a {
+  color: var(--gray-700);
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: color var(--transition);
+}
+.nav-top a:hover { color: var(--cyan); }
+
+.nav-main {
+  background: var(--white);
+  height: var(--nav-h);
+  position: sticky;
+  top: 0;
+  z-index: 900;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  border-bottom: 3px solid var(--cyan);
+}
+.nav-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.nav-logo img {
+  height: 44px;
+  width: auto;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  list-style: none;
+  flex: 1;
+}
+.nav-links li a {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0 1rem;
+  height: var(--nav-h);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--violet);
+  letter-spacing: 0.01em;
+  transition: color var(--transition);
+  white-space: nowrap;
+  position: relative;
+}
+.nav-links li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 1rem;
+  right: 1rem;
+  height: 3px;
+  background: var(--magenta);
+  transform: scaleX(0);
+  transition: transform var(--transition);
+}
+.nav-links li a:hover { color: var(--cyan); }
+.nav-links li a:hover::after { transform: scaleX(1); }
+.nav-links li a svg { width: 12px; height: 12px; opacity: 0.6; }
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-left: auto;
+}
+
+.btn-search {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  color: var(--violet);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  transition: color var(--transition), background var(--transition);
+}
+.btn-search:hover { background: var(--gray-100); color: var(--cyan); }
+.btn-search img { width: 22px; height: 22px; }
+
+.btn-portal {
+  background: var(--cyan);
+  color: var(--white);
+  padding: 0.55rem 1.25rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  transition: background var(--transition), transform var(--transition);
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.btn-portal:hover { background: var(--cyan-dark); transform: translateY(-1px); }
+
+.btn-ask-ai {
+  background: var(--magenta);
+  color: var(--white);
+  padding: 0.55rem 1.25rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  transition: background var(--transition), transform var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+  border: none;
+}
+.btn-ask-ai:hover { background: var(--magenta-dark); transform: translateY(-1px); }
+.btn-ask-ai img { width: 16px; height: 16px; filter: brightness(10); }
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0.5rem;
+}
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--violet);
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+/* ============================================================
+   HERO CAROUSEL
+   ============================================================ */
+
+.hero {
+  position: relative;
+  height: 620px;
+  overflow: hidden;
+  background: var(--violet);
+}
+
+.hero-slides {
+  display: flex;
+  height: 100%;
+  transition: transform 0.7s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.hero-slide {
+  position: relative;
+  min-width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.hero-slide-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.hero-slide-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, rgba(34,31,114,0.88) 0%, rgba(34,31,114,0.60) 45%, rgba(0,157,214,0.15) 100%);
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 1280px;
+  width: 100%;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 2rem;
+  align-items: center;
+}
+
+.hero-text {
+  color: var(--white);
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(216,11,140,0.9);
+  color: var(--white);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.9rem;
+  border-radius: var(--radius-sm);
+  margin-bottom: 1.25rem;
+}
+
+.hero-headline {
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+  color: var(--white);
+}
+
+.hero-headline span {
+  color: var(--cyan-light);
+}
+
+.hero-subtext {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.85);
+  max-width: 520px;
+  margin-bottom: 1.75rem;
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 0.875rem;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background: var(--magenta);
+  color: var(--white);
+  padding: 0.85rem 1.75rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+  white-space: nowrap;
+  border: none;
+  cursor: pointer;
+}
+.btn-primary:hover {
+  background: var(--magenta-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(216,11,140,0.4);
+}
+
+.btn-secondary-white {
+  background: transparent;
+  color: var(--white);
+  border: 2px solid rgba(255,255,255,0.7);
+  padding: 0.85rem 1.75rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all var(--transition);
+  white-space: nowrap;
+  cursor: pointer;
+}
+.btn-secondary-white:hover {
+  background: rgba(255,255,255,0.15);
+  border-color: var(--white);
+  transform: translateY(-2px);
+}
+
+/* Search Card */
+.hero-search-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  z-index: 10;
+}
+.hero-search-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--violet);
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--cyan-light);
+}
+
+.search-tabs {
+  display: flex;
+  gap: 0;
+  margin-bottom: 1rem;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--gray-200);
+}
+.search-tab {
+  flex: 1;
+  padding: 0.55rem 0.5rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  background: var(--white);
+  color: var(--gray-500);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: all var(--transition);
+}
+.search-tab.active {
+  background: var(--cyan);
+  color: var(--white);
+}
+.search-tab:hover:not(.active) { background: var(--gray-100); color: var(--violet); }
+
+.search-input-wrap {
+  position: relative;
+  margin-bottom: 0.75rem;
+}
+.search-input-wrap input {
+  width: 100%;
+  padding: 0.75rem 2.75rem 0.75rem 1rem;
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+  font-family: inherit;
+  color: var(--text-body);
+  transition: border var(--transition);
+  outline: none;
+}
+.search-input-wrap input::placeholder { color: var(--gray-500); }
+.search-input-wrap input:focus { border-color: var(--cyan); }
+.search-input-wrap .si-icon {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  opacity: 0.5;
+}
+
+.search-submit {
+  width: 100%;
+  background: var(--cyan);
+  color: var(--white);
+  border: none;
+  padding: 0.8rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.search-submit:hover { background: var(--cyan-dark); transform: translateY(-1px); }
+
+.search-quick-links {
+  margin-top: 0.875rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.search-ql-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--gray-500);
+  margin-bottom: 0.2rem;
+}
+.search-ql-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.search-ql-pill {
+  background: var(--cyan-light);
+  color: var(--cyan-dark);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.3rem 0.65rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all var(--transition);
+  white-space: nowrap;
+}
+.search-ql-pill:hover { background: var(--cyan); color: var(--white); }
+
+/* Hero controls */
+.hero-controls {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  z-index: 20;
+}
+.hero-dots {
+  display: flex;
+  gap: 0.5rem;
+}
+.hero-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.45);
+  cursor: pointer;
+  transition: all var(--transition);
+  border: none;
+}
+.hero-dot.active {
+  background: var(--white);
+  transform: scale(1.35);
+}
+.hero-nav {
+  display: flex;
+  gap: 0.5rem;
+}
+.hero-prev, .hero-next {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  border: 1.5px solid rgba(255,255,255,0.5);
+  color: var(--white);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition);
+  font-size: 1rem;
+}
+.hero-prev:hover, .hero-next:hover {
+  background: rgba(255,255,255,0.35);
+  border-color: var(--white);
+}
+
+/* ============================================================
+   TRUST STATS BAR
+   ============================================================ */
+
+.trust-bar {
+  background: var(--cyan);
+  padding: 1.25rem 0;
+}
+.trust-bar-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+}
+.trust-stat {
+  text-align: center;
+  color: var(--white);
+  padding: 0.5rem 1rem;
+  border-right: 1px solid rgba(255,255,255,0.25);
+}
+.trust-stat:last-child { border-right: none; }
+.trust-stat-number {
+  font-size: 1.85rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  display: block;
+}
+.trust-stat-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.9;
+  margin-top: 0.2rem;
+  display: block;
+}
+
+/* ============================================================
+   URGENT CARE QUICK ACCESS
+   ============================================================ */
+
+.urgent-strip {
+  background: var(--white);
+  border-bottom: 1px solid var(--gray-100);
+  padding: 1rem 0;
+}
+.urgent-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+.urgent-label {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gray-500);
+  padding-right: 1.5rem;
+  border-right: 1px solid var(--gray-200);
+  white-space: nowrap;
+}
+.urgent-cards {
+  display: flex;
+  gap: 0;
+  flex: 1;
+  overflow: hidden;
+}
+.urgent-card {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 1.5rem;
+  border-right: 1px solid var(--gray-200);
+  cursor: pointer;
+  transition: background var(--transition);
+}
+.urgent-card:last-child { border-right: none; }
+.urgent-card:hover { background: var(--off-white); }
+.urgent-card-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.urgent-card-icon svg { width: 18px; height: 18px; }
+.urgent-card-icon.vc { background: var(--cyan-light); color: var(--cyan-dark); }
+.urgent-card-icon.uc { background: #FFF0E6; color: #D35400; }
+.urgent-card-icon.er { background: #FFE8EE; color: #C0392B; }
+.urgent-card-icon.ap { background: #EDF7FF; color: var(--cyan-dark); }
+.urgent-card-text strong {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--violet);
+}
+.urgent-card-text span {
+  font-size: 0.7rem;
+  color: var(--gray-500);
+}
+
+/* ============================================================
+   SECTION SHARED
+   ============================================================ */
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.eyebrow {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--magenta);
+  margin-bottom: 0.75rem;
+}
+.section-title {
+  font-size: clamp(1.85rem, 3vw, 2.6rem);
+  font-weight: 700;
+  color: var(--violet);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
+}
+.section-subtitle {
+  font-size: 1rem;
+  color: var(--gray-500);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.section-pad { padding: 5rem 0; }
+.section-pad-sm { padding: 3.5rem 0; }
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.btn-outline-cyan {
+  background: transparent;
+  color: var(--cyan);
+  border: 2px solid var(--cyan);
+  padding: 0.7rem 1.5rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all var(--transition);
+  cursor: pointer;
+}
+.btn-outline-cyan:hover { background: var(--cyan); color: var(--white); transform: translateY(-1px); }
+
+.btn-magenta {
+  background: var(--magenta);
+  color: var(--white);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all var(--transition);
+  cursor: pointer;
+  border: none;
+}
+.btn-magenta:hover { background: var(--magenta-dark); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(216,11,140,0.35); }
+
+/* ============================================================
+   SPECIALTIES SECTION
+   ============================================================ */
+
+.specialties { background: var(--off-white); }
+
+.spec-top-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.spec-card-hero {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  aspect-ratio: 3/2;
+  cursor: pointer;
+}
+.spec-card-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.spec-card-hero:hover img { transform: scale(1.05); }
+.spec-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(34,31,114,0.85) 0%, rgba(34,31,114,0.2) 65%, transparent 100%);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.spec-card-icon-wrap {
+  width: 44px;
+  height: 44px;
+  background: var(--magenta);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+}
+.spec-card-icon-wrap img { width: 22px; height: 22px; filter: brightness(10); }
+.spec-card-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 0.3rem;
+}
+.spec-card-desc {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.82);
+  line-height: 1.4;
+  margin-bottom: 0.75rem;
+}
+.spec-card-cta {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--cyan-light);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.spec-grid-row {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 0.875rem;
+}
+
+.spec-item {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1rem;
+  text-align: center;
+  cursor: pointer;
+  border: 1.5px solid transparent;
+  transition: all var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+.spec-item:hover {
+  border-color: var(--cyan);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+.spec-item-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--cyan-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 0.6rem;
+}
+.spec-item-icon img { width: 24px; height: 24px; }
+.spec-item-name {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--violet);
+  line-height: 1.3;
+  letter-spacing: 0.01em;
+}
+
+.spec-footer {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+/* ============================================================
+   CARE OPTIONS
+   ============================================================ */
+
+.care-options { background: var(--white); }
+
+.care-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.care-card {
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all var(--transition);
+  cursor: pointer;
+  position: relative;
+}
+.care-card:hover {
+  border-color: var(--cyan);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+.care-card-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+.care-card-body {
+  padding: 1.5rem;
+}
+.care-card-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.7rem;
+  border-radius: 20px;
+  margin-bottom: 0.875rem;
+}
+.care-card-tag.virtual { background: var(--cyan-light); color: var(--cyan-dark); }
+.care-card-tag.urgent  { background: #FFF0E6; color: #C05E00; }
+.care-card-tag.er      { background: #FFE8EE; color: #B03030; }
+.care-card-tag svg, .care-card-tag img { width: 12px; height: 12px; }
+
+.care-card-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--violet);
+  margin-bottom: 0.5rem;
+  line-height: 1.25;
+}
+.care-card-desc {
+  font-size: 0.875rem;
+  color: var(--gray-500);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+.care-card-action {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--cyan);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: gap var(--transition);
+}
+.care-card:hover .care-card-action { gap: 0.7rem; }
+
+/* ============================================================
+   VIDEO FEATURE
+   ============================================================ */
+
+.video-feature { background: var(--off-white); }
+
+.video-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.video-thumb {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  aspect-ratio: 16/9;
+  cursor: pointer;
+}
+.video-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.video-thumb:hover img { transform: scale(1.03); }
+.video-thumb-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(34,31,114,0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition);
+}
+.video-thumb:hover .video-thumb-overlay { background: rgba(34,31,114,0.25); }
+.play-btn {
+  width: 72px;
+  height: 72px;
+  background: var(--magenta);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.video-thumb:hover .play-btn {
+  transform: scale(1.1);
+  box-shadow: 0 8px 30px rgba(216,11,140,0.55);
+}
+.play-icon {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 14px 0 14px 24px;
+  border-color: transparent transparent transparent var(--white);
+  margin-left: 4px;
+}
+
+.video-content .eyebrow { margin-bottom: 1rem; }
+.video-content .section-title { text-align: left; font-size: 2.2rem; }
+.video-content p {
+  font-size: 1rem;
+  color: var(--gray-500);
+  line-height: 1.7;
+  margin: 1rem 0 1.75rem;
+}
+
+.video-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+.video-stat {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  border-left: 4px solid var(--magenta);
+}
+.video-stat-num {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--violet);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.video-stat-label {
+  font-size: 0.75rem;
+  color: var(--gray-500);
+  margin-top: 0.25rem;
+}
+
+/* ============================================================
+   APP PROMO
+   ============================================================ */
+
+.app-promo {
+  background: var(--violet);
+  overflow: hidden;
+  position: relative;
+}
+.app-promo::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: rgba(0,157,214,0.12);
+}
+.app-promo::after {
+  content: '';
+  position: absolute;
+  bottom: -60px;
+  left: 10%;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: rgba(216,11,140,0.1);
+}
+
+.app-inner {
+  display: grid;
+  grid-template-columns: 1fr 480px;
+  gap: 4rem;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.app-content .eyebrow { color: var(--cyan-light); }
+.app-content .section-title { text-align: left; color: var(--white); }
+.app-content p {
+  color: rgba(255,255,255,0.75);
+  margin: 1rem 0 2rem;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.app-features {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+.app-feature {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.875rem;
+  color: rgba(255,255,255,0.85);
+}
+.app-feature-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--cyan);
+  flex-shrink: 0;
+}
+
+.app-badges {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.app-badge {
+  display: block;
+  height: 42px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+.app-badge img { height: 100%; width: auto; }
+
+.app-mockup {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  align-items: flex-end;
+}
+.phone-frame {
+  background: var(--white);
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+  width: 200px;
+}
+.phone-frame.tall { margin-bottom: 0; width: 220px; }
+.phone-frame.short { margin-bottom: 2rem; }
+.phone-screen {
+  width: 100%;
+}
+.phone-screen img {
+  width: 100%;
+  display: block;
+}
+.phone-header {
+  background: var(--cyan);
+  padding: 1rem 1.25rem 0.75rem;
+  color: var(--white);
+}
+.phone-header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.phone-notch {
+  width: 80px;
+  height: 5px;
+  background: rgba(255,255,255,0.4);
+  border-radius: 3px;
+  margin: 0 auto 0.75rem;
+}
+.phone-logo-small { font-size: 0.65rem; font-weight: 800; color: var(--white); opacity: 0.9; }
+.phone-greeting { font-size: 0.8rem; font-weight: 700; color: var(--white); }
+.phone-subgreet { font-size: 0.65rem; color: rgba(255,255,255,0.75); }
+.phone-body {
+  background: var(--off-white);
+  padding: 0.75rem 1rem;
+}
+.phone-card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 0.6rem 0.75rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  box-shadow: var(--shadow-sm);
+}
+.phone-card-dot {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.phone-card-dot.c { background: var(--cyan-light); }
+.phone-card-dot.m { background: #FFE0F3; }
+.phone-card-dot.g { background: #E8F5E9; }
+.phone-card-text strong { display: block; font-size: 0.6rem; font-weight: 700; color: var(--violet); }
+.phone-card-text span { font-size: 0.55rem; color: var(--gray-500); }
+.phone-card-dot svg { width: 14px; height: 14px; }
+.phone-bottom-nav {
+  display: flex;
+  justify-content: space-around;
+  padding: 0.5rem 0;
+  background: var(--white);
+  border-top: 1px solid var(--gray-100);
+}
+.pbn-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+}
+.pbn-dot {
+  width: 20px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--gray-200);
+}
+.pbn-dot.active { background: var(--cyan); }
+.pbn-label { font-size: 0.45rem; color: var(--gray-500); font-weight: 600; }
+.pbn-label.active { color: var(--cyan); }
+
+/* ============================================================
+   LOCATIONS
+   ============================================================ */
+
+.locations { background: var(--white); }
+
+.locations-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.location-card {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  aspect-ratio: 2/3;
+  position: relative;
+  cursor: pointer;
+}
+.location-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.location-card:hover img { transform: scale(1.06); }
+.location-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(34,31,114,0.92) 0%, rgba(34,31,114,0.35) 55%, transparent 100%);
+  padding: 1.25rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.location-card-name {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.25;
+  margin-bottom: 0.3rem;
+}
+.location-card-detail {
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.75);
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-bottom: 0.5rem;
+}
+.location-card-tag {
+  display: inline-block;
+  background: var(--magenta);
+  color: var(--white);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+}
+.locations-footer { text-align: center; }
+
+/* ============================================================
+   PATIENT STORIES
+   ============================================================ */
+
+.patient-stories { background: var(--off-white); }
+
+.stories-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.story-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  transition: box-shadow var(--transition), transform var(--transition);
+  cursor: pointer;
+}
+.story-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+.story-img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  min-height: 260px;
+}
+.story-body {
+  padding: 1.75rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.story-tag {
+  display: inline-block;
+  background: var(--magenta);
+  color: var(--white);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.7rem;
+  border-radius: 20px;
+  margin-bottom: 0.875rem;
+}
+.story-quote {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--violet);
+  line-height: 1.45;
+  margin-bottom: 0.875rem;
+  flex: 1;
+  position: relative;
+}
+.story-quote::before {
+  content: '"';
+  font-size: 3.5rem;
+  line-height: 1;
+  color: var(--cyan-light);
+  position: absolute;
+  top: -0.5rem;
+  left: -0.5rem;
+  font-family: Georgia, serif;
+  z-index: 0;
+}
+.story-quote-text { position: relative; z-index: 1; padding-top: 1.5rem; padding-left: 0.5rem; }
+.story-patient {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.story-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--cyan-light);
+}
+.story-patient-info strong {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--gray-900);
+}
+.story-patient-info span {
+  font-size: 0.7rem;
+  color: var(--gray-500);
+}
+.story-link {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--cyan);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 1rem;
+}
+
+/* ============================================================
+   RESEARCH BANNER
+   ============================================================ */
+
+.research-banner {
+  background: linear-gradient(135deg, var(--violet) 0%, #1a3a8a 60%, var(--cyan-dark) 100%);
+  padding: 4.5rem 0;
+  position: relative;
+  overflow: hidden;
+}
+.research-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='20'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.research-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.research-content .eyebrow { color: var(--cyan-light); }
+.research-content .section-title { text-align: left; color: var(--white); }
+.research-content p {
+  color: rgba(255,255,255,0.75);
+  margin: 1rem 0 2rem;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.research-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+.research-stat {
+  text-align: center;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem 1rem;
+}
+.research-stat-num {
+  display: block;
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--white);
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+.research-stat-label {
+  display: block;
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-top: 0.4rem;
+}
+
+/* ============================================================
+   NEWS & INSIGHTS
+   ============================================================ */
+
+.news { background: var(--white); }
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.news-card {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--white);
+  border: 1.5px solid var(--gray-100);
+  transition: all var(--transition);
+  cursor: pointer;
+}
+.news-card:hover {
+  border-color: var(--cyan);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+.news-card-img-wrap {
+  position: relative;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+}
+.news-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.news-card:hover .news-card-img { transform: scale(1.05); }
+.news-card-cat {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: var(--magenta);
+  color: var(--white);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.7rem;
+  border-radius: 3px;
+}
+.news-card-body { padding: 1.25rem 1.25rem 1.5rem; }
+.news-card-date {
+  font-size: 0.7rem;
+  color: var(--gray-500);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.news-card-title {
+  font-size: 0.975rem;
+  font-weight: 700;
+  color: var(--violet);
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+}
+.news-card-excerpt {
+  font-size: 0.825rem;
+  color: var(--gray-500);
+  line-height: 1.55;
+  margin-bottom: 1rem;
+}
+.news-card-read-more {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--cyan);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.news-footer { text-align: center; }
+
+/* ============================================================
+   AI HEALTH ASSISTANT BANNER
+   ============================================================ */
+
+.ai-banner {
+  background: var(--gray-900);
+  padding: 3.5rem 0;
+  position: relative;
+  overflow: hidden;
+}
+.ai-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent 40%, rgba(0,157,214,0.15) 100%);
+}
+.ai-banner-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  position: relative;
+  z-index: 2;
+}
+.ai-banner-text .eyebrow { color: var(--cyan); }
+.ai-banner-text h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+.ai-banner-text p {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.65);
+  max-width: 520px;
+}
+.ai-banner-cta {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+.ai-disclaimer {
+  font-size: 0.65rem;
+  color: rgba(255,255,255,0.4);
+  text-align: center;
+  max-width: 220px;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
+.footer {
+  background: var(--gray-900);
+  color: rgba(255,255,255,0.75);
+  padding: 4rem 0 2rem;
+}
+.footer-top {
+  display: grid;
+  grid-template-columns: 260px repeat(4, 1fr);
+  gap: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  margin-bottom: 2.5rem;
+}
+.footer-brand { }
+.footer-logo { margin-bottom: 1.25rem; }
+.footer-logo img { height: 40px; filter: brightness(10); }
+.footer-brand p {
+  font-size: 0.8rem;
+  line-height: 1.65;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 1.25rem;
+}
+.footer-social {
+  display: flex;
+  gap: 0.625rem;
+}
+.footer-social-link {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition);
+}
+.footer-social-link:hover { background: var(--cyan); }
+.footer-social-link img { width: 16px; height: 16px; filter: brightness(10); }
+
+.footer-col h4 {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--cyan);
+  display: inline-block;
+}
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 0.6rem; }
+.footer-col ul li a {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.6);
+  transition: color var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.footer-col ul li a:hover { color: var(--cyan); }
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.footer-legal {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.4);
+}
+.footer-legal a { color: rgba(255,255,255,0.55); transition: color var(--transition); }
+.footer-legal a:hover { color: var(--cyan); }
+.footer-accreditation {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+.accreditation-badge {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--radius-sm);
+  padding: 0.4rem 0.8rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.55);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-align: center;
+  line-height: 1.3;
+}
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.fade-up-delay-1 { transition-delay: 0.1s; }
+.fade-up-delay-2 { transition-delay: 0.2s; }
+.fade-up-delay-3 { transition-delay: 0.3s; }
+.fade-up-delay-4 { transition-delay: 0.4s; }
+
+/* ============================================================
+   FOCUS / ACCESSIBILITY
+   ============================================================ */
+
+*:focus-visible {
+  outline: 3px solid var(--cyan);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 1100px) {
+  .hero-content { grid-template-columns: 1fr; }
+  .hero-search-card { display: none; }
+  .trust-bar-inner { grid-template-columns: repeat(3, 1fr); }
+  .trust-stat:nth-child(4) { border-right: none; }
+  .spec-grid-row { grid-template-columns: repeat(4, 1fr); }
+  .footer-top { grid-template-columns: 1fr 1fr; }
+  .app-inner { grid-template-columns: 1fr; }
+  .app-mockup { display: none; }
+}
+
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .hero { height: 540px; }
+  .hero-headline { font-size: 2rem; }
+  .spec-top-cards { grid-template-columns: 1fr 1fr; }
+  .spec-top-cards .spec-card-hero:last-child { display: none; }
+  .care-grid { grid-template-columns: 1fr 1fr; }
+  .video-split { grid-template-columns: 1fr; }
+  .stories-grid { grid-template-columns: 1fr; }
+  .news-grid { grid-template-columns: 1fr 1fr; }
+  .locations-grid { grid-template-columns: repeat(3, 1fr); }
+  .research-inner { grid-template-columns: 1fr; }
+  .urgent-cards { display: none; }
+  .ai-banner-inner { flex-direction: column; text-align: center; }
+  .ai-banner-text p { margin: 0 auto; }
+}
+
+@media (max-width: 620px) {
+  :root { --nav-h: 60px; }
+  .section-pad { padding: 3.5rem 0; }
+  .container { padding: 0 1.25rem; }
+  .trust-bar-inner { grid-template-columns: repeat(3, 1fr); gap: 0; }
+  .trust-stat { padding: 0.4rem 0.5rem; }
+  .trust-stat-number { font-size: 1.35rem; }
+  .trust-stat-label { font-size: 0.6rem; }
+  .spec-top-cards { grid-template-columns: 1fr; }
+  .spec-grid-row { grid-template-columns: repeat(4, 1fr); }
+  .care-grid { grid-template-columns: 1fr; }
+  .news-grid { grid-template-columns: 1fr; }
+  .locations-grid { grid-template-columns: 1fr 1fr; }
+  .story-card { grid-template-columns: 1fr; }
+  .story-img { height: 200px; }
+  .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+  .research-stats { grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .hero-ctas { flex-direction: column; align-items: flex-start; }
+  .btn-primary, .btn-secondary-white { width: 100%; justify-content: center; }
+  .hero-content { padding: 0 1.25rem; }
+  .hero { height: auto; min-height: 520px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+  .hero-slides { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<!-- ============================================================
+     TOP UTILITY BAR
+     ============================================================ -->
+<div class="nav-top" role="navigation" aria-label="Utility navigation">
+  <div class="nav-top-inner">
+    <a href="#">For Physicians</a>
+    <a href="#">For Employees</a>
+    <a href="#">Research</a>
+    <a href="#">
+      <img src="https://www.figma.com/api/mcp/asset/79ca0b62-e664-42c6-9228-a3da40a2ba76" alt="" aria-hidden="true" style="width:13px;height:13px;">
+      EN | ES
+    </a>
+    <a href="#">Donate</a>
+    <a href="#">1-800-MD-SINAI</a>
+  </div>
+</div>
+
+<!-- ============================================================
+     MAIN NAVIGATION
+     ============================================================ -->
+<nav class="nav-main" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo" aria-label="Mount Sinai Health System — Home">
+      <img src="https://www.figma.com/api/mcp/asset/1d860dea-105b-4706-b214-121b6767616b" 
+           alt="Mount Sinai Health System">
+    </a>
+
+    <ul class="nav-links" role="list">
+      <li>
+        <a href="#">Patient Care 
+          <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </li>
+      <li>
+        <a href="#">Find a Doctor 
+          <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </li>
+      <li>
+        <a href="#">Locations 
+          <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </li>
+      <li>
+        <a href="#">Specialties 
+          <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </li>
+      <li><a href="#">Research & Innovation</a></li>
+      <li><a href="#">Education</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <button class="btn-search" aria-label="Search">
+        <img src="https://www.figma.com/api/mcp/asset/d0ef630d-6180-401d-ab45-d97ffca928db" alt="">
+      </button>
+      <button class="btn-ask-ai" aria-label="Ask Mount Sinai AI assistant">
+        <img src="https://www.figma.com/api/mcp/asset/1d85f779-8df4-42f2-8f22-e0d8b3d8a9c4" alt="">
+        Ask AI
+      </button>
+      <a href="#" class="btn-portal">MyMountSinai</a>
+    </div>
+
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ============================================================
+     MAIN CONTENT
+     ============================================================ -->
+<main id="main">
+
+<!-- ============================================================
+     HERO CAROUSEL
+     ============================================================ -->
+<section class="hero" aria-label="Featured stories">
+  <div class="hero-slides" id="heroSlides" role="region" aria-live="polite">
+
+    <!-- Slide 1 -->
+    <div class="hero-slide" aria-label="Slide 1 of 3">
+      <img class="hero-slide-img" 
+           src="https://www.figma.com/api/mcp/asset/7dcead65-dcab-46c7-85d5-edced34bf1f8" 
+           alt="Mount Sinai physicians providing exceptional care">
+      <div class="hero-slide-overlay"></div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="hero-slide" aria-label="Slide 2 of 3">
+      <img class="hero-slide-img" 
+           src="https://www.figma.com/api/mcp/asset/ed115b7f-a464-47ba-9827-a59ae5383690" 
+           alt="World-class research at Mount Sinai">
+      <div class="hero-slide-overlay"></div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="hero-slide" aria-label="Slide 3 of 3">
+      <img class="hero-slide-img" 
+           src="https://www.figma.com/api/mcp/asset/6fdbce49-aefa-4d52-bae4-b54a70d3b144" 
+           alt="Mount Sinai patient and physician partnership">
+      <div class="hero-slide-overlay"></div>
+    </div>
+  </div>
+
+  <!-- Hero Content -->
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="hero-eyebrow">
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor" aria-hidden="true"><circle cx="5" cy="5" r="5"/></svg>
+        Ranked #1 in New York by U.S. News &amp; World Report
+      </div>
+      <h1 class="hero-headline">
+        Where Medicine Meets <span>the Possible</span>
+      </h1>
+      <p class="hero-subtext">
+        New York's most trusted academic medical center — delivering world-class care, pioneering research, and compassionate healing across 400+ locations.
+      </p>
+      <div class="hero-ctas">
+        <a href="#" class="btn-primary">
+          Find a Doctor
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#" class="btn-secondary-white">
+          Request Appointment
+        </a>
+      </div>
+    </div>
+
+    <!-- Floating Search Card -->
+    <div class="hero-search-card" role="search" aria-label="Find care at Mount Sinai">
+      <h3>Find Care at Mount Sinai</h3>
+      <div class="search-tabs" role="tablist">
+        <button class="search-tab active" role="tab" aria-selected="true" onclick="switchTab(this)">Doctor</button>
+        <button class="search-tab" role="tab" aria-selected="false" onclick="switchTab(this)">Location</button>
+        <button class="search-tab" role="tab" aria-selected="false" onclick="switchTab(this)">Service</button>
+      </div>
+      <div class="search-input-wrap">
+        <input type="search" placeholder="Name, specialty, condition…" aria-label="Search doctors">
+        <img class="si-icon" src="https://www.figma.com/api/mcp/asset/d0ef630d-6180-401d-ab45-d97ffca928db" alt="">
+      </div>
+      <div class="search-input-wrap">
+        <input type="text" placeholder="Zip code or neighborhood" aria-label="Enter location">
+        <svg class="si-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M9 1C6.24 1 4 3.24 4 6c0 4.25 5 11 5 11s5-6.75 5-11c0-2.76-2.24-5-5-5z" fill="#6B7B8D"/><circle cx="9" cy="6" r="1.8" fill="white"/></svg>
+      </div>
+      <button class="search-submit" aria-label="Search for care">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><circle cx="6" cy="6" r="4.5" stroke="white" stroke-width="1.5"/><path d="M9.5 9.5l3 3" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+        Search
+      </button>
+      <div class="search-quick-links">
+        <div class="search-ql-label">Popular Searches</div>
+        <div class="search-ql-pills">
+          <button class="search-ql-pill">Primary Care</button>
+          <button class="search-ql-pill">Cardiology</button>
+          <button class="search-ql-pill">Oncology</button>
+          <button class="search-ql-pill">OB/GYN</button>
+          <button class="search-ql-pill">Pediatrics</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Carousel Controls -->
+  <div class="hero-controls">
+    <div class="hero-nav">
+      <button class="hero-prev" id="heroPrev" aria-label="Previous slide">&#8592;</button>
+      <button class="hero-next" id="heroNext" aria-label="Next slide">&#8594;</button>
+    </div>
+    <div class="hero-dots" role="tablist" aria-label="Slide indicators">
+      <button class="hero-dot active" id="dot-0" aria-label="Go to slide 1" aria-current="true" onclick="goToSlide(0)"></button>
+      <button class="hero-dot" id="dot-1" aria-label="Go to slide 2" onclick="goToSlide(1)"></button>
+      <button class="hero-dot" id="dot-2" aria-label="Go to slide 3" onclick="goToSlide(2)"></button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     TRUST STATS BAR
+     ============================================================ -->
+<div class="trust-bar" role="complementary" aria-label="Mount Sinai by the numbers">
+  <div class="trust-bar-inner">
+    <div class="trust-stat fade-up">
+      <span class="trust-stat-number">#1</span>
+      <span class="trust-stat-label">in New York</span>
+    </div>
+    <div class="trust-stat fade-up fade-up-delay-1">
+      <span class="trust-stat-number">150+</span>
+      <span class="trust-stat-label">Clinical Trials</span>
+    </div>
+    <div class="trust-stat fade-up fade-up-delay-2">
+      <span class="trust-stat-number">7,800+</span>
+      <span class="trust-stat-label">Physicians</span>
+    </div>
+    <div class="trust-stat fade-up fade-up-delay-3">
+      <span class="trust-stat-number">400+</span>
+      <span class="trust-stat-label">Locations</span>
+    </div>
+    <div class="trust-stat fade-up fade-up-delay-4">
+      <span class="trust-stat-number">4M+</span>
+      <span class="trust-stat-label">Patient Encounters / Year</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     URGENT CARE QUICK ACCESS
+     ============================================================ -->
+<div class="urgent-strip" role="complementary" aria-label="Care access options">
+  <div class="urgent-inner container">
+    <div class="urgent-label">Need Care Now?</div>
+    <div class="urgent-cards" role="list">
+      <a href="#" class="urgent-card" role="listitem">
+        <div class="urgent-card-icon vc" aria-hidden="true">
+          <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="3" width="16" height="11" rx="2" stroke="#007BAA" stroke-width="1.5"/><path d="M6 17h6M9 14v3" stroke="#007BAA" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="urgent-card-text">
+          <strong>Virtual Visit</strong>
+          <span>Available in minutes</span>
+        </div>
+      </a>
+      <a href="#" class="urgent-card" role="listitem">
+        <div class="urgent-card-icon uc" aria-hidden="true">
+          <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="9" cy="9" r="7.5" stroke="#C05E00" stroke-width="1.5"/><path d="M9 5.5v3.5l2.5 2" stroke="#C05E00" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="urgent-card-text">
+          <strong>Urgent Care</strong>
+          <span>Walk-in near you</span>
+        </div>
+      </a>
+      <a href="#" class="urgent-card" role="listitem">
+        <div class="urgent-card-icon er" aria-hidden="true">
+          <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 2L2 6v10h14V6L9 2z" stroke="#B03030" stroke-width="1.5"/><path d="M9 8v4M7 10h4" stroke="#B03030" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="urgent-card-text">
+          <strong>Emergency Room</strong>
+          <span>Find the nearest ER</span>
+        </div>
+      </a>
+      <a href="#" class="urgent-card" role="listitem">
+        <div class="urgent-card-icon ap" aria-hidden="true">
+          <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="1" width="12" height="16" rx="2" stroke="#007BAA" stroke-width="1.5"/><path d="M6 6h6M6 9h6M6 12h4" stroke="#007BAA" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="urgent-card-text">
+          <strong>Schedule Online</strong>
+          <span>Book in 60 seconds</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     SPECIALTIES
+     ============================================================ -->
+<section class="specialties section-pad" aria-labelledby="spec-heading">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="eyebrow">Centers of Excellence</span>
+      <h2 id="spec-heading" class="section-title">World-Renowned Specialties</h2>
+      <p class="section-subtitle">Our programs consistently rank among the nation's best, combining pioneering research with exceptional clinical outcomes.</p>
+    </div>
+
+    <div class="spec-top-cards">
+      <div class="spec-card-hero fade-up">
+        <img src="https://www.figma.com/api/mcp/asset/1f5ca04f-793f-4d30-9161-797bd7bf1a48" 
+             alt="Cardiovascular care specialists at Mount Sinai">
+        <div class="spec-card-overlay">
+          <div class="spec-card-icon-wrap" aria-hidden="true">
+            <img src="https://www.figma.com/api/mcp/asset/29a78a61-2793-409d-956c-f26c35231fec" alt="">
+          </div>
+          <div class="spec-card-name">Heart & Vascular</div>
+          <div class="spec-card-desc">Ranked #1 in New York for Cardiology — advanced interventional techniques, cardiac surgery, and prevention.</div>
+          <span class="spec-card-cta">Explore →</span>
+        </div>
+      </div>
+      <div class="spec-card-hero fade-up fade-up-delay-1">
+        <img src="https://www.figma.com/api/mcp/asset/7dac62d3-7b03-42b1-b0e5-900e304c9d3a" 
+             alt="Neuroscience and brain care team at Mount Sinai">
+        <div class="spec-card-overlay">
+          <div class="spec-card-icon-wrap" aria-hidden="true">
+            <img src="https://www.figma.com/api/mcp/asset/1dbfbbb5-a525-4bb0-a3fe-0c6dff6f4b06" alt="">
+          </div>
+          <div class="spec-card-name">Neuroscience</div>
+          <div class="spec-card-desc">Comprehensive brain and spine care — from neurology and neurosurgery to the Alzheimer's Disease Research Center.</div>
+          <span class="spec-card-cta">Explore →</span>
+        </div>
+      </div>
+      <div class="spec-card-hero fade-up fade-up-delay-2">
+        <img src="https://www.figma.com/api/mcp/asset/72fc435f-1f37-4936-ace3-51da21e04197" 
+             alt="Cancer care specialists at Mount Sinai Tisch Cancer Center">
+        <div class="spec-card-overlay">
+          <div class="spec-card-icon-wrap" aria-hidden="true">
+            <img src="https://www.figma.com/api/mcp/asset/dbaf5a2c-dbd0-4092-b0c9-19be726aaf8e" alt="">
+          </div>
+          <div class="spec-card-name">Tisch Cancer Center</div>
+          <div class="spec-card-desc">Cutting-edge oncology combining genomic science, immunotherapy, and compassionate multidisciplinary care.</div>
+          <span class="spec-card-cta">Explore →</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="spec-grid-row" role="list">
+      <div class="spec-item fade-up" role="listitem">
+        <div class="spec-item-icon" aria-hidden="true">
+          <img src="https://www.figma.com/api/mcp/asset/22c33026-5be7-4531-8023-22a278ee9477" alt="">
+        </div>
+        <div class="spec-item-name">Geriatrics</div>
+      </div>
+      <div class="spec-item fade-up fade-up-delay-1" role="listitem">
+        <div class="spec-item-icon" aria-hidden="true">
+          <img src="https://www.figma.com/api/mcp/asset/1c5b412c-2997-4d70-8fca-1e4ccf5addc3" alt="">
+        </div>
+        <div class="spec-item-name">Primary Care</div>
+      </div>
+      <div class="spec-item fade-up fade-up-delay-2" role="listitem">
+        <div class="spec-item-icon" aria-hidden="true">
+          <img src="https://www.figma.com/api/mcp/asset/f440bb84-fd64-4ffa-9cc6-ea81584a636b" alt="">
+        </div>
+        <div class="spec-item-name">Orthopaedics</div>
+      </div>
+      <div class="spec-item fade-up fade-up-delay-3" role="listitem">
+        <div class="spec-item-icon" aria-hidden="true">
+          <img src="https://www.figma.com/api/mcp/asset/cb258d83-7209-4116-9ae3-a446d2124bbd" alt="">
+        </div>
+        <div class="spec-item-name">Dermatology</div>
+      </div>
+      <div class="spec-item fade-up" role="listitem">
+        <div class="spec-item-icon" aria-hidden="true">
+          <img src="https://www.figma.com/api/mcp/asset/bd10fba7-0f21-45d3-a72a-d8462460fedc" alt="">
+        </div>
+        <div class="spec-item-name">Genetics</div>
+      </div>
+      <div class="spec-item fade-up fade-up-delay-1" role="listitem">
+        <div class="spec-item-icon" aria-hidden="true">
+          <img src="https://www.figma.com/api/mcp/asset/6fb6e155-d38f-4248-9730-1fc4967b9ddf" alt="">
+        </div>
+        <div class="spec-item-name">Dental</div>
+      </div>
+      <div class="spec-item fade-up fade-up-delay-2" role="listitem">
+        <div class="spec-item-icon" aria-hidden="true">
+          <img src="https://www.figma.com/api/mcp/asset/7914bd73-2e5b-428a-b5eb-93581f7a0f86" alt="">
+        </div>
+        <div class="spec-item-name">Women's Health</div>
+      </div>
+      <div class="spec-item fade-up fade-up-delay-3" role="listitem">
+        <div class="spec-item-icon" aria-hidden="true">
+          <img src="https://www.figma.com/api/mcp/asset/19df3b15-0d70-48da-8d4d-9e0bdf23ea1d" alt="">
+        </div>
+        <div class="spec-item-name">Rehabilitation</div>
+      </div>
+    </div>
+
+    <div class="spec-footer fade-up">
+      <a href="#" class="btn-outline-cyan">
+        View All 40+ Specialties
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CARE OPTIONS
+     ============================================================ -->
+<section class="care-options section-pad" aria-labelledby="care-heading">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="eyebrow">How We Care</span>
+      <h2 id="care-heading" class="section-title">The Right Care, Right When You Need It</h2>
+      <p class="section-subtitle">From urgent needs to ongoing wellness, every care pathway is designed around you.</p>
+    </div>
+
+    <div class="care-grid">
+      <div class="care-card fade-up">
+        <img class="care-card-image" 
+             src="https://www.figma.com/api/mcp/asset/0b404499-46bc-49d1-a01a-ebd37384ca34" 
+             alt="Virtual care appointment on laptop">
+        <div class="care-card-body">
+          <span class="care-card-tag virtual">
+            <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="1" y="2" width="10" height="7" rx="1.5" stroke="#007BAA" stroke-width="1.2"/><path d="M4 11h4M6 9v2" stroke="#007BAA" stroke-width="1.2" stroke-linecap="round"/></svg>
+            Virtual Care
+          </span>
+          <h3 class="care-card-title">See a Doctor From Anywhere</h3>
+          <p class="care-card-desc">Video visits with Mount Sinai physicians — available for primary care, mental health, follow-ups, and more. No waiting room required.</p>
+          <span class="care-card-action">
+            Start a Visit
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+      </div>
+      <div class="care-card fade-up fade-up-delay-1">
+        <img class="care-card-image" 
+             src="https://www.figma.com/api/mcp/asset/c3a33ade-abc4-41e9-8bae-9b14c22a15c9" 
+             alt="Urgent care clinic waiting area">
+        <div class="care-card-body">
+          <span class="care-card-tag urgent">
+            <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="6" cy="6" r="4.5" stroke="#C05E00" stroke-width="1.2"/><path d="M6 3.5v3l1.5 1.5" stroke="#C05E00" stroke-width="1.2" stroke-linecap="round"/></svg>
+            Urgent Care
+          </span>
+          <h3 class="care-card-title">Immediate, Walk-In Care</h3>
+          <p class="care-card-desc">40+ urgent care locations across New York — for illnesses, minor injuries, and after-hours needs that can't wait for an appointment.</p>
+          <span class="care-card-action">
+            Find Urgent Care Near You
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+      </div>
+      <div class="care-card fade-up fade-up-delay-2">
+        <img class="care-card-image" 
+             src="https://www.figma.com/api/mcp/asset/6c630e48-5153-41ef-a813-87245b16266e" 
+             alt="Emergency department entrance at Mount Sinai Hospital">
+        <div class="care-card-body">
+          <span class="care-card-tag er">
+            <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 1L1 4.5V11h10V4.5L6 1z" stroke="#B03030" stroke-width="1.2"/><path d="M6 5.5v2.5M5 7h2" stroke="#B03030" stroke-width="1.2" stroke-linecap="round"/></svg>
+            Emergency
+          </span>
+          <h3 class="care-card-title">Emergency Care, Around the Clock</h3>
+          <p class="care-card-desc">Level 1 Trauma Centers with 24/7 emergency services at our major hospitals — staffed by specialists ready for any situation.</p>
+          <span class="care-card-action">
+            Find Emergency Room
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     VIDEO FEATURE
+     ============================================================ -->
+<section class="video-feature section-pad" aria-labelledby="video-heading">
+  <div class="container">
+    <div class="video-split">
+      <div class="video-thumb fade-up" role="button" tabindex="0" aria-label="Play: How Mount Sinai is redefining cancer care">
+        <img src="https://www.figma.com/api/mcp/asset/bd9ab15b-4926-4094-86d7-b0da1142c263" 
+             alt="Mount Sinai researcher working in laboratory">
+        <div class="video-thumb-overlay">
+          <div class="play-btn" aria-hidden="true">
+            <div class="play-icon"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-content fade-up fade-up-delay-2">
+        <span class="eyebrow">Patient Story</span>
+        <h2 id="video-heading" class="section-title">From Diagnosis to Possibility</h2>
+        <p>When Maria Torres received her diagnosis, she came to Mount Sinai's Tisch Cancer Center — and experienced firsthand the power of combining world-class oncology with cutting-edge genomics and deeply personalized care.</p>
+        <div class="video-stats" role="list">
+          <div class="video-stat" role="listitem">
+            <div class="video-stat-num">5,000+</div>
+            <div class="video-stat-label">Cancer patients treated annually</div>
+          </div>
+          <div class="video-stat" role="listitem">
+            <div class="video-stat-num">200+</div>
+            <div class="video-stat-label">Active cancer clinical trials</div>
+          </div>
+          <div class="video-stat" role="listitem">
+            <div class="video-stat-num">50+</div>
+            <div class="video-stat-label">Dedicated oncology specialists</div>
+          </div>
+          <div class="video-stat" role="listitem">
+            <div class="video-stat-num">98%</div>
+            <div class="video-stat-label">Patient satisfaction score</div>
+          </div>
+        </div>
+        <a href="#" class="btn-magenta">
+          Read More Patient Stories
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     APP PROMO
+     ============================================================ -->
+<section class="app-promo section-pad" aria-labelledby="app-heading">
+  <div class="container">
+    <div class="app-inner">
+      <div class="app-content fade-up">
+        <span class="eyebrow">MyMountSinai App</span>
+        <h2 id="app-heading" class="section-title">Your Health, in Your Hands</h2>
+        <p>Manage your entire healthcare journey from one powerful app. Message your care team, view test results, schedule appointments, and access your health records — anytime, anywhere.</p>
+        <ul class="app-features" role="list">
+          <li class="app-feature" role="listitem">
+            <div class="app-feature-dot" aria-hidden="true"></div>
+            Secure Messaging
+          </li>
+          <li class="app-feature" role="listitem">
+            <div class="app-feature-dot" aria-hidden="true"></div>
+            Lab Results
+          </li>
+          <li class="app-feature" role="listitem">
+            <div class="app-feature-dot" aria-hidden="true"></div>
+            Rx Refills
+          </li>
+          <li class="app-feature" role="listitem">
+            <div class="app-feature-dot" aria-hidden="true"></div>
+            Video Visits
+          </li>
+          <li class="app-feature" role="listitem">
+            <div class="app-feature-dot" aria-hidden="true"></div>
+            Schedule Easily
+          </li>
+          <li class="app-feature" role="listitem">
+            <div class="app-feature-dot" aria-hidden="true"></div>
+            Health Records
+          </li>
+        </ul>
+        <div class="app-badges">
+          <a href="#" class="app-badge" aria-label="Download on the App Store">
+            <img src="https://www.figma.com/api/mcp/asset/f09b310a-75fd-4916-b103-e2bd59b607ff" 
+                 alt="Download on the App Store">
+          </a>
+          <a href="#" class="app-badge" aria-label="Get it on Google Play">
+            <img src="https://www.figma.com/api/mcp/asset/665055a8-356c-4fd7-a7e9-7d6ca3634517" 
+                 alt="Get it on Google Play">
+          </a>
+        </div>
+      </div>
+
+      <!-- Phone Mockup -->
+      <div class="app-mockup fade-up fade-up-delay-2" aria-hidden="true">
+        <div class="phone-frame short">
+          <div class="phone-screen">
+            <div class="phone-header">
+              <div class="phone-notch"></div>
+              <div class="phone-header-top">
+                <span class="phone-logo-small">MOUNT SINAI</span>
+              </div>
+              <div class="phone-greeting">Good morning</div>
+              <div class="phone-subgreet">You have 2 upcoming appointments</div>
+            </div>
+            <div class="phone-body">
+              <div class="phone-card">
+                <div class="phone-card-dot c">
+                  <svg viewBox="0 0 14 14" fill="none"><rect x="2" y="1" width="10" height="12" rx="1.5" fill="#009DD6"/></svg>
+                </div>
+                <div class="phone-card-text">
+                  <strong>Lab Results Ready</strong>
+                  <span>View your bloodwork</span>
+                </div>
+              </div>
+              <div class="phone-card">
+                <div class="phone-card-dot m">
+                  <svg viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5" fill="#D80B8C"/></svg>
+                </div>
+                <div class="phone-card-text">
+                  <strong>Dr. Chen — Tue 10AM</strong>
+                  <span>Primary Care Check-Up</span>
+                </div>
+              </div>
+              <div class="phone-card">
+                <div class="phone-card-dot g">
+                  <svg viewBox="0 0 14 14" fill="none"><path d="M7 2v10M2 7h10" stroke="#27AE60" stroke-width="2" stroke-linecap="round"/></svg>
+                </div>
+                <div class="phone-card-text">
+                  <strong>Refill Prescription</strong>
+                  <span>Ready at East 86th</span>
+                </div>
+              </div>
+            </div>
+            <div class="phone-bottom-nav">
+              <div class="pbn-item">
+                <div class="pbn-dot active"></div>
+                <div class="pbn-label active">Home</div>
+              </div>
+              <div class="pbn-item">
+                <div class="pbn-dot"></div>
+                <div class="pbn-label">Visits</div>
+              </div>
+              <div class="pbn-item">
+                <div class="pbn-dot"></div>
+                <div class="pbn-label">Records</div>
+              </div>
+              <div class="pbn-item">
+                <div class="pbn-dot"></div>
+                <div class="pbn-label">Me</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     LOCATIONS
+     ============================================================ -->
+<section class="locations section-pad" aria-labelledby="locations-heading">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="eyebrow">Our Hospitals & Locations</span>
+      <h2 id="locations-heading" class="section-title">Always Close to Home</h2>
+      <p class="section-subtitle">Eight hospitals and 400+ locations across the New York metropolitan area — world-class care in every neighborhood.</p>
+    </div>
+
+    <div class="locations-grid fade-up" role="list">
+      <div class="location-card" role="listitem">
+        <img src="https://www.figma.com/api/mcp/asset/f44b2de0-3855-44c8-9cf1-dc76884136cf" 
+             alt="The Mount Sinai Hospital exterior, Upper East Side Manhattan">
+        <div class="location-card-overlay">
+          <span class="location-card-tag">Flagship</span>
+          <div class="location-card-name">The Mount Sinai Hospital</div>
+          <div class="location-card-detail">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true"><circle cx="5" cy="4.5" r="2.5" stroke="rgba(255,255,255,0.75)" stroke-width="1"/><path d="M5 1v1M5 8.5v1M1 4.5H2M8 4.5H9" stroke="rgba(255,255,255,0.75)" stroke-width="1"/></svg>
+            Upper East Side, Manhattan
+          </div>
+        </div>
+      </div>
+      <div class="location-card" role="listitem">
+        <img src="https://www.figma.com/api/mcp/asset/20073145-070c-4950-8593-0f4ab178ac41" 
+             alt="Mount Sinai Morningside Hospital exterior">
+        <div class="location-card-overlay">
+          <div class="location-card-name">Mount Sinai Morningside</div>
+          <div class="location-card-detail">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true"><circle cx="5" cy="4.5" r="2.5" stroke="rgba(255,255,255,0.75)" stroke-width="1"/></svg>
+            Morningside Heights
+          </div>
+        </div>
+      </div>
+      <div class="location-card" role="listitem">
+        <img src="https://www.figma.com/api/mcp/asset/bb2c5cbb-0f0f-450f-9d6c-4c9472119bca" 
+             alt="Mount Sinai Beth Israel Hospital exterior">
+        <div class="location-card-overlay">
+          <div class="location-card-name">Mount Sinai Beth Israel</div>
+          <div class="location-card-detail">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true"><circle cx="5" cy="4.5" r="2.5" stroke="rgba(255,255,255,0.75)" stroke-width="1"/></svg>
+            Gramercy Park, Manhattan
+          </div>
+        </div>
+      </div>
+      <div class="location-card" role="listitem">
+        <img src="https://www.figma.com/api/mcp/asset/329f4af2-aef0-482e-b204-0cab0bde9a45" 
+             alt="Mount Sinai Brooklyn Hospital exterior">
+        <div class="location-card-overlay">
+          <div class="location-card-name">Mount Sinai Brooklyn</div>
+          <div class="location-card-detail">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true"><circle cx="5" cy="4.5" r="2.5" stroke="rgba(255,255,255,0.75)" stroke-width="1"/></svg>
+            Brooklyn, NY
+          </div>
+        </div>
+      </div>
+      <div class="location-card" role="listitem">
+        <img src="https://www.figma.com/api/mcp/asset/dbd6d71b-2a4a-4a6d-9337-6105ebf066dd" 
+             alt="Mount Sinai South Nassau exterior">
+        <div class="location-card-overlay">
+          <div class="location-card-name">Mount Sinai South Nassau</div>
+          <div class="location-card-detail">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true"><circle cx="5" cy="4.5" r="2.5" stroke="rgba(255,255,255,0.75)" stroke-width="1"/></svg>
+            Long Island
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="locations-footer fade-up">
+      <a href="#" class="btn-outline-cyan">
+        View All 400+ Locations
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PATIENT STORIES
+     ============================================================ -->
+<section class="patient-stories section-pad" aria-labelledby="stories-heading">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="eyebrow">Patient Stories</span>
+      <h2 id="stories-heading" class="section-title">Real People. Real Outcomes.</h2>
+      <p class="section-subtitle">Every patient is a story of courage, hope, and the extraordinary work of our care teams.</p>
+    </div>
+
+    <div class="stories-grid">
+      <article class="story-card fade-up">
+        <img class="story-img" 
+             src="https://www.figma.com/api/mcp/asset/0a3c059f-dcf9-4758-b56f-f07fd8e5fe22" 
+             alt="Patient James Martinez recovering after heart surgery">
+        <div class="story-body">
+          <span class="story-tag">Cardiology</span>
+          <blockquote class="story-quote">
+            <p class="story-quote-text">They gave me back not just my heart, but my life with my grandchildren.</p>
+          </blockquote>
+          <div class="story-patient">
+            <div>
+              <strong class="story-patient-info" style="display:block;font-size:0.8rem;font-weight:700;color:#2C3E50;">James Martinez, 67</strong>
+              <span style="font-size:0.7rem;color:#6B7B8D;">Open Heart Surgery, 2024</span>
+            </div>
+          </div>
+          <a href="#" class="story-link" aria-label="Read James's full story">
+            Read James's Story
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </article>
+      <article class="story-card fade-up fade-up-delay-2">
+        <img class="story-img" 
+             src="https://www.figma.com/api/mcp/asset/7449397f-2d58-4a15-83fd-19f9cf962921" 
+             alt="Patient Amara Johnson smiling after cancer treatment">
+        <div class="story-body">
+          <span class="story-tag">Oncology</span>
+          <blockquote class="story-quote">
+            <p class="story-quote-text">The team at Tisch saw me as a person, not just a diagnosis. That made all the difference.</p>
+          </blockquote>
+          <div class="story-patient">
+            <div>
+              <strong style="display:block;font-size:0.8rem;font-weight:700;color:#2C3E50;">Amara Johnson, 42</strong>
+              <span style="font-size:0.7rem;color:#6B7B8D;">Breast Cancer Survivor, 2023</span>
+            </div>
+          </div>
+          <a href="#" class="story-link" aria-label="Read Amara's full story">
+            Read Amara's Story
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     RESEARCH BANNER
+     ============================================================ -->
+<section class="research-banner" aria-labelledby="research-heading">
+  <div class="container">
+    <div class="research-inner">
+      <div class="research-content fade-up">
+        <span class="eyebrow">Discovery Happens Here</span>
+        <h2 id="research-heading" class="section-title">Leading the Future of Medicine</h2>
+        <p>As a top-ranked research institution, Mount Sinai translates scientific discovery into real treatments — faster than anywhere else in New York.</p>
+        <a href="#" class="btn-secondary-white" style="display:inline-flex;">
+          Explore Mount Sinai Research
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" style="margin-left:0.5rem;"><path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+      <div class="research-stats fade-up fade-up-delay-1" role="list">
+        <div class="research-stat" role="listitem">
+          <span class="research-stat-num">$1.8B</span>
+          <span class="research-stat-label">Annual Research Funding</span>
+        </div>
+        <div class="research-stat" role="listitem">
+          <span class="research-stat-num">3,500+</span>
+          <span class="research-stat-label">Research Scientists</span>
+        </div>
+        <div class="research-stat" role="listitem">
+          <span class="research-stat-num">150+</span>
+          <span class="research-stat-label">Active Clinical Trials</span>
+        </div>
+        <div class="research-stat" role="listitem">
+          <span class="research-stat-num">Top 20</span>
+          <span class="research-stat-label">NIH-Funded Institutions</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     NEWS & INSIGHTS
+     ============================================================ -->
+<section class="news section-pad" aria-labelledby="news-heading">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="eyebrow">Newsroom</span>
+      <h2 id="news-heading" class="section-title">Latest from Mount Sinai</h2>
+      <p class="section-subtitle">Breakthroughs, stories, and health insights from our researchers, physicians, and care teams.</p>
+    </div>
+
+    <div class="news-grid">
+      <article class="news-card fade-up">
+        <div class="news-card-img-wrap">
+          <img class="news-card-img" 
+               src="https://www.figma.com/api/mcp/asset/c3a33ade-abc4-41e9-8bae-9b14c22a15c9" 
+               alt="Mount Sinai researchers in AI medical imaging lab">
+          <span class="news-card-cat">Research</span>
+        </div>
+        <div class="news-card-body">
+          <div class="news-card-date">June 10, 2025</div>
+          <h3 class="news-card-title">Mount Sinai AI System Detects Early Alzheimer's with 94% Accuracy</h3>
+          <p class="news-card-excerpt">Researchers developed a machine-learning model that identifies biomarkers years before symptom onset, opening new windows for intervention.</p>
+          <span class="news-card-read-more">
+            Read More 
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+      </article>
+      <article class="news-card fade-up fade-up-delay-1">
+        <div class="news-card-img-wrap">
+          <img class="news-card-img" 
+               src="https://www.figma.com/api/mcp/asset/6c630e48-5153-41ef-a813-87245b16266e" 
+               alt="Mount Sinai cardiology team consultation">
+          <span class="news-card-cat" style="background:var(--cyan);">Patient Care</span>
+        </div>
+        <div class="news-card-body">
+          <div class="news-card-date">June 3, 2025</div>
+          <h3 class="news-card-title">New Heart Valve Replacement Procedure Reduces Recovery by 60%</h3>
+          <p class="news-card-excerpt">Mount Sinai cardiovascular surgeons pioneer a minimally invasive technique now offered to patients across all system hospitals.</p>
+          <span class="news-card-read-more">
+            Read More 
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+      </article>
+      <article class="news-card fade-up fade-up-delay-2">
+        <div class="news-card-img-wrap">
+          <img class="news-card-img" 
+               src="https://www.figma.com/api/mcp/asset/bd9ab15b-4926-4094-86d7-b0da1142c263" 
+               alt="Mount Sinai health education session">
+          <span class="news-card-cat" style="background:#27AE60;">Community</span>
+        </div>
+        <div class="news-card-body">
+          <div class="news-card-date">May 28, 2025</div>
+          <h3 class="news-card-title">Mount Sinai Expands Free Screening Program to All Five Boroughs</h3>
+          <p class="news-card-excerpt">Building on 20 years of community health investment, the program now offers free cancer screenings and metabolic panels citywide.</p>
+          <span class="news-card-read-more">
+            Read More 
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+      </article>
+    </div>
+
+    <div class="news-footer fade-up">
+      <a href="#" class="btn-outline-cyan">
+        View All News &amp; Stories
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     AI ASSISTANT BANNER
+     ============================================================ -->
+<section class="ai-banner" aria-labelledby="ai-heading">
+  <div class="container">
+    <div class="ai-banner-inner">
+      <div class="ai-banner-text fade-up">
+        <span class="eyebrow">Mount Sinai AI</span>
+        <h2 id="ai-heading">Health Questions? Ask Our AI.</h2>
+        <p>Get instant, reliable answers to your health questions — powered by Mount Sinai's clinical knowledge and reviewed by our physicians. Available 24/7.</p>
+      </div>
+      <div class="ai-banner-cta fade-up fade-up-delay-2">
+        <button class="btn-ask-ai" style="font-size:1rem; padding:1rem 2rem; border-radius:8px;" aria-label="Launch Mount Sinai AI health assistant">
+          <img src="https://www.figma.com/api/mcp/asset/1d85f779-8df4-42f2-8f22-e0d8b3d8a9c4" alt="" aria-hidden="true" style="width:20px;height:20px;">
+          Ask Mount Sinai AI
+        </button>
+        <p class="ai-disclaimer">Not for emergencies. For immediate help call 911 or your doctor.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="https://www.figma.com/api/mcp/asset/77a69957-8dc5-4fc8-8f6e-1f30dc493f12" 
+               alt="Mount Sinai Health System">
+        </div>
+        <p>New York's leading academic medical center — seven hospitals, a world-renowned medical school, and 400+ locations dedicated to exceptional care.</p>
+        <div class="footer-social" role="list" aria-label="Mount Sinai social media">
+          <a href="#" class="footer-social-link" role="listitem" aria-label="Mount Sinai on Facebook">
+            <img src="https://www.figma.com/api/mcp/asset/8fd8297b-21b1-4e75-b18c-8c1c48ae7dd9" alt="">
+          </a>
+          <a href="#" class="footer-social-link" role="listitem" aria-label="Mount Sinai on Instagram">
+            <img src="https://www.figma.com/api/mcp/asset/32033b92-98cb-4428-8373-4e2a8f052236" alt="">
+          </a>
+          <a href="#" class="footer-social-link" role="listitem" aria-label="Mount Sinai on LinkedIn">
+            <img src="https://www.figma.com/api/mcp/asset/522e71a8-b80e-40fd-9c9c-e73bc8591b91" alt="">
+          </a>
+          <a href="#" class="footer-social-link" role="listitem" aria-label="Mount Sinai on YouTube">
+            <img src="https://www.figma.com/api/mcp/asset/54119769-8423-4337-b622-3e5c01dfa458" alt="">
+          </a>
+          <a href="#" class="footer-social-link" role="listitem" aria-label="Mount Sinai on X (Twitter)">
+            <img src="https://www.figma.com/api/mcp/asset/e70f83ec-6849-435a-8b0d-9d5920aa758c" alt="">
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Patient Care</h4>
+        <ul>
+          <li><a href="#">Find a Doctor</a></li>
+          <li><a href="#">Request an Appointment</a></li>
+          <li><a href="#">Virtual Visits</a></li>
+          <li><a href="#">Urgent Care Centers</a></li>
+          <li><a href="#">Emergency Services</a></li>
+          <li><a href="#">International Patients</a></li>
+          <li><a href="#">Pay My Bill</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Specialties</h4>
+        <ul>
+          <li><a href="#">Cancer Care</a></li>
+          <li><a href="#">Heart &amp; Vascular</a></li>
+          <li><a href="#">Neurology &amp; Neurosurgery</a></li>
+          <li><a href="#">Orthopaedics</a></li>
+          <li><a href="#">Women's Health</a></li>
+          <li><a href="#">Geriatrics</a></li>
+          <li><a href="#">View All Specialties</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Research</h4>
+        <ul>
+          <li><a href="#">Research Centers</a></li>
+          <li><a href="#">Clinical Trials</a></li>
+          <li><a href="#">Publications</a></li>
+          <li><a href="#">Icahn School of Medicine</a></li>
+          <li><a href="#">Biobank</a></li>
+          <li><a href="#">Mount Sinai Innovation Partners</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>About</h4>
+        <ul>
+          <li><a href="#">About Mount Sinai</a></li>
+          <li><a href="#">Leadership</a></li>
+          <li><a href="#">Newsroom</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Giving &amp; Philanthropy</a></li>
+          <li><a href="#">Community Health</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-legal">
+        &copy; 2025 Mount Sinai Health System. All rights reserved.
+        <a href="#">Privacy Policy</a> · 
+        <a href="#">Terms of Use</a> · 
+        <a href="#">Nondiscrimination Notice</a> · 
+        <a href="#">Accessibility</a>
+      </div>
+      <div class="footer-accreditation" aria-label="Accreditation and recognition">
+        <div class="accreditation-badge">#1 New York<br>U.S. News</div>
+        <div class="accreditation-badge">Magnet<br>Excellence</div>
+        <div class="accreditation-badge">JCAHO<br>Accredited</div>
+        <div class="accreditation-badge">ACS<br>Verified</div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     JAVASCRIPT
+     ============================================================ -->
+<script>
+// ============================================================
+// HERO CAROUSEL
+// ============================================================
+let currentSlide = 0;
+let totalSlides = 3;
+let autoplayTimer;
+let isHovered = false;
+
+const slidesEl = document.getElementById('heroSlides');
+
+function goToSlide(n) {
+  currentSlide = (n + totalSlides) % totalSlides;
+  slidesEl.style.transform = `translateX(-${currentSlide * 100}%)`;
+  document.querySelectorAll('.hero-dot').forEach((dot, i) => {
+    dot.classList.toggle('active', i === currentSlide);
+    dot.setAttribute('aria-current', i === currentSlide ? 'true' : 'false');
+  });
+}
+
+function nextSlide() { goToSlide(currentSlide + 1); }
+function prevSlide() { goToSlide(currentSlide - 1); }
+
+function startAutoplay() {
+  clearInterval(autoplayTimer);
+  autoplayTimer = setInterval(() => {
+    if (!isHovered) nextSlide();
+  }, 5500);
+}
+
+document.getElementById('heroNext').addEventListener('click', () => { nextSlide(); startAutoplay(); });
+document.getElementById('heroPrev').addEventListener('click', () => { prevSlide(); startAutoplay(); });
+
+const heroEl = document.querySelector('.hero');
+heroEl.addEventListener('mouseenter', () => { isHovered = true; });
+heroEl.addEventListener('mouseleave', () => { isHovered = false; });
+heroEl.addEventListener('focusin',    () => { isHovered = true; });
+heroEl.addEventListener('focusout',   () => { isHovered = false; });
+
+// Keyboard navigation for hero
+heroEl.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowRight') nextSlide();
+  if (e.key === 'ArrowLeft')  prevSlide();
+});
+
+startAutoplay();
+
+// ============================================================
+// SEARCH TABS
+// ============================================================
+function switchTab(el) {
+  el.closest('.search-tabs').querySelectorAll('.search-tab').forEach(t => {
+    t.classList.remove('active');
+    t.setAttribute('aria-selected', 'false');
+  });
+  el.classList.add('active');
+  el.setAttribute('aria-selected', 'true');
+}
+
+// ============================================================
+// SCROLL ANIMATIONS
+// ============================================================
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+// ============================================================
+// REDUCED MOTION RESPECT
+// ============================================================
+if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.querySelectorAll('.fade-up').forEach(el => {
+    el.classList.add('visible');
+    el.style.transition = 'none';
+  });
+  clearInterval(autoplayTimer);
+}
+
+// ============================================================
+// MOBILE NAV (hamburger)
+// ============================================================
+const hamburger = document.querySelector('.hamburger');
+const navLinks  = document.querySelector('.nav-links');
+hamburger.addEventListener('click', () => {
+  const isOpen = navLinks.style.display === 'flex';
+  navLinks.style.display = isOpen ? 'none' : 'flex';
+  navLinks.style.flexDirection = 'column';
+  navLinks.style.position = 'absolute';
+  navLinks.style.top = '100%';
+  navLinks.style.left = '0';
+  navLinks.style.right = '0';
+  navLinks.style.background = '#fff';
+  navLinks.style.padding = '1rem 2rem';
+  navLinks.style.boxShadow = '0 8px 30px rgba(0,0,0,0.15)';
+  navLinks.style.zIndex = '1000';
+  hamburger.setAttribute('aria-expanded', String(!isOpen));
+});
+
+// ============================================================
+// STICKY NAV SHADOW ON SCROLL
+// ============================================================
+const navMain = document.querySelector('.nav-main');
+window.addEventListener('scroll', () => {
+  navMain.style.boxShadow = window.scrollY > 10
+    ? '0 4px 24px rgba(0,0,0,0.14)'
+    : '0 2px 12px rgba(0,0,0,0.08)';
+}, { passive: true });
+</script>
+
+</body>
+</html>
